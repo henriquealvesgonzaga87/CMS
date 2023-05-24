@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "model-page.html" %}
+
+{% block content %}
+
+  <h2>Clients</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for customer in customer_list %}
+        <tr>
+          <td>{{ customer.get_full_name }}</td>
+          <td>{{ customer.get_full_city }}</td>
+          <td>{{ customer.get_full_phone_number }}</td>
+          <td>{{ customer.email }}</td>
+          <td><button type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
