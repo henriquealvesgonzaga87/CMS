@@ -4,11 +4,19 @@
 
   <h2>Clients</h2>
 
+  <form>
+    <div class="form-group mt-1">
+      <input class="form-control" type="text" name="name" placeholder="Search by name...">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
   <a href="{% url 'customer:customer-create' %}">
     <button type="button" class="btn btn-success"
             style="float: right; margin-botton: 5px">Add</button>
   </a>
-  <table class="table table-bordered">
+
+  <table class="table table-bordered mt-4">
     <thead>
       <tr>
         <th>Name</th>
